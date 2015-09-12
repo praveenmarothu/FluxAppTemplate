@@ -7,11 +7,11 @@ module.exports =
     context: path.join(__dirname,'src'),
     entry: 
     {
-        app: './js/app.jsx'
+        app: './js/app/app-entry.jsx'
     },
     output:
     {
-        path: path.join(__dirname,'dist'),
+        path: path.join(__dirname,'build'),
         filename: './js/[name].js'
     },
     module: 
@@ -20,7 +20,8 @@ module.exports =
         [
             {
                 test: /\.jsx$/,
-                loader: "babel" 
+                loader: "babel", 
+                exclude: /node_modules/
             },
             {
                 test: /\.(html|png|jpg|jpeg)$/,
@@ -43,7 +44,7 @@ module.exports =
     ],
     devServer:
     {
-        contentBase: path.join(__dirname,'dist'),  //Relative directory for base of server
+        contentBase: path.join(__dirname,'hotbuild'),  //Relative directory for base of server
         devtool: 'eval',
         hot: true,        //Live-reload
         inline: true,
