@@ -16,7 +16,7 @@ var HelloActions=
             AppDispatcher.handleAction
             ({
                 type: "ACN_GREET",
-                data: "Greetings from Action"
+                data: "Greetings from Action ....."
             });
     }    
 }

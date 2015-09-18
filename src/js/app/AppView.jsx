@@ -8,7 +8,7 @@ class AppView extends React.Component
     render()
     {
         return ( 
-        <HelloView author={{name:"Praveen"}} />
+            <HelloView author={{name:"Praveen"}} />
         );
     }
 }
